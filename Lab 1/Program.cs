@@ -7,12 +7,12 @@ namespace Stock
         static void Main(string[] args)
         {
 
-            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Lab1_output.txt");
+            string destPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Lab1_output.txt");
             string titles = "Broker".PadRight(10) + "Stock".PadRight(15) +
             "Value".PadRight(10) + "Changes".PadRight(10) + "Date and Time";
 
             Console.WriteLine(titles);
-            using (StreamWriter outputFile = new StreamWriter(filePath, true))
+            using (StreamWriter outputFile = new StreamWriter(destPath, true))
             {
                 outputFile.WriteLine(titles);
             }
