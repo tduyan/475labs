@@ -6,6 +6,17 @@ namespace Stock
     {
         static void Main(string[] args)
         {
+
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Lab1_output.txt");
+            string titles = "Broker".PadRight(10) + "Stock".PadRight(15) +
+            "Value".PadRight(10) + "Changes".PadRight(10) + "Date and Time";
+
+            Console.WriteLine(titles);
+            using (StreamWriter outputFile = new StreamWriter(filePath, true))
+            {
+                outputFile.WriteLine(titles);
+            }
+
             Stock stock1 = new Stock("Technology", 160, 5, 15);
             Stock stock2 = new Stock("Retail", 30, 2, 6);
             Stock stock3 = new Stock("Banking", 90, 4, 10);
